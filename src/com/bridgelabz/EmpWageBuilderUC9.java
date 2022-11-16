@@ -1,6 +1,6 @@
 package com.bridgelabz;
 
-public class TotalWageEachCompany {
+public class EmpWageBuilderUC9 {
 
 	public static final int IS_PART_TIME = 1;
 	public static final int IS_FULL_TIME =2;
@@ -11,7 +11,8 @@ public class TotalWageEachCompany {
 	private final int maxHoursPerMonth;
 	private int totalEmpWage;
 
-	public TotalWageEachCompany (String company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth) {
+	public EmpWageBuilderUC9 (String company, int empRatePerHour, int numOfWorkingDays, 
+			int maxHoursPerMonth) {
 
 		this.company = company;
 		this.empRatePerHour = empRatePerHour;
@@ -22,7 +23,7 @@ public class TotalWageEachCompany {
 	public void computeEmpWage() {
 		int empHrs = 0, totalEmpHrs = 0, totalWorkingDays =0;
 
-		while(totalEmpHrs <= numOfWorkingDays) {
+		while(totalEmpHrs <= maxHoursPerMonth && totalWorkingDays < numOfWorkingDays) {
 			totalWorkingDays ++;
 
 			int empCheck = (int) Math.floor(Math.random() * 10) % 3;
@@ -49,9 +50,9 @@ public class TotalWageEachCompany {
 		return "Total Employee Wgae for Company:" +company +" is: " +totalEmpWage;
 	}
 	public static void main(String[] args) {
-		TotalWageEachCompany sr = new TotalWageEachCompany("Siddhasiri", 20, 2, 10);
-		TotalWageEachCompany ml = new TotalWageEachCompany("Malve", 10, 4, 20);
-		TotalWageEachCompany pg = new TotalWageEachCompany("Patil Group",15,4,18);
+		EmpWageBuilderUC9 sr = new EmpWageBuilderUC9("Siddhasiri", 20, 2, 10);
+		EmpWageBuilderUC9 ml = new EmpWageBuilderUC9("Malve", 10, 4, 20);
+		EmpWageBuilderUC9 pg = new EmpWageBuilderUC9("Patil Group",15,4,18);
 		sr.computeEmpWage();
 		System.out.println(sr);
 		ml.computeEmpWage();

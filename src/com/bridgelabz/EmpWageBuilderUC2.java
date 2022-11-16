@@ -1,6 +1,6 @@
 package com.bridgelabz;
 
-public class EmployeeDailyWage {
+public class EmpWageBuilderUC2 {
 
 	public static void main(String[] args) {
 		
